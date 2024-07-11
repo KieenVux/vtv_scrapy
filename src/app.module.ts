@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ScrapyModule } from './scrapy/scrapy.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { NewsModule } from './news/news.module';
@@ -34,7 +33,6 @@ import { APP_GUARD } from '@nestjs/core';
       }
     ]),
     MongooseModule.forRoot(process.env.DB_URI),
-    ScrapyModule,
     NewsModule,
   ],
   controllers: [AppController],
